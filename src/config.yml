@@ -1,0 +1,37 @@
+#Message sent to console when command cannot be run by console
+console_error_message: '&8[&c*&8]&cYou are unable to execute this command'
+
+#Message sent if the targeted player is not found
+player_not_found_message: '&8[&c*&8]&cPlayer could not be found'
+
+#No Permission Message
+no_perm_message: '&cYou do not have permission to execute this command!'
+
+#Message sent to a player on death
+death_message: '&6Use /back to return to your death point'
+
+#Message sent on suicide
+SuicideCommand:
+  suicide_message: '&6 committed suicide'
+
+#Fly Command
+FlyCommand:
+  fly_enabled: '&8[&a*&8] &7flying &aenabled&7!'
+  fly_disabled: '&8[&c*&8] &7flying &cdisabled&7!'
+  
+#Back Command
+BackCommand:
+  no_location_found_message: '&8[&c*&8] &cNo location to return to'
+  
+#Home Command
+HomeCommand:
+  invalid_location_message: '&8[&c*&8] &cNo valid home location found'
+  
+#Spawn Command
+SpawnCommand:
+  invalid_location_message: '&8[&c*&8] &cNo valid spawn location found for this world'
+  world_name: 'world'
+  
+#Nick Command
+NickCommand:
+  success: '&8[&a*&8] &aNick name set to '

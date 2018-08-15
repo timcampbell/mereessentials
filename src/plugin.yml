@@ -1,0 +1,26 @@
+name: MereEssentials
+version: 1.0.0
+author: Sopa89
+main: com.sopa89.mereessentials.Main
+description: Custom Essentials Plugin for Merecraft
+api-version: 1.13
+
+commands:
+  fly:
+    description: Enables a player to fly
+    usage: "Usage /<command> [player]"
+  back:
+    description: Return to last teleport or death
+    usage: "Usage /<command>"
+  suicide:
+    description: Kill yourself
+    usage: "Usage /<command>"
+  home:
+    description: Return to your bed
+    usage: "Usage /<command>"
+  spawn:
+    description: Return to world spawn
+    usage: "Usage /<command>"
+  nick:
+    description: Set your nickname
+    usage: "Usage /<command> [player] \"<nick>\""
