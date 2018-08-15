@@ -9,6 +9,7 @@ import com.sopa89.mereessentials.commands.NickCommand;
 import com.sopa89.mereessentials.commands.SpawnCommand;
 import com.sopa89.mereessentials.commands.SuicideCommand;
 import com.sopa89.mereessentials.listeners.PlayerDeathListener;
+import com.sopa89.mereessentials.listeners.PlayerLoginListener;
 import com.sopa89.mereessentials.listeners.PlayerTeleportListener;
 import com.sopa89.mereessentials.recipes.CraftingRecipes;
 
@@ -31,6 +32,6 @@ public class Main extends JavaPlugin {
 		//Listeners
 		new PlayerDeathListener(this);
 		new PlayerTeleportListener(this);
+		new PlayerLoginListener(this);
 	}
-	
 }

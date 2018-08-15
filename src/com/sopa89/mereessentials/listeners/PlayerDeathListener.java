@@ -33,7 +33,7 @@ public class PlayerDeathListener implements Listener
 		
 		Location loc = p.getLocation();
 		
-		File file=new File("plugins/MereEssentials/Back", p.getUniqueId() + ".yml");
+		File file=new File("plugins/MereEssentials/Players", p.getUniqueId() + ".yml");
 		
 		FileConfiguration config = YamlConfiguration.loadConfiguration(file);
 		

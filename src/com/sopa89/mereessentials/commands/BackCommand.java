@@ -39,7 +39,7 @@ public class BackCommand implements CommandExecutor{
 		
 		if(p.hasPermission("mereessentials.back"))
 		{
-			File file = new File("plugins/MereEssentials/Back", p.getUniqueId() + ".yml");
+			File file = new File("plugins/MereEssentials/Players", p.getUniqueId() + ".yml");
 			
 			if(file.exists())
 			{

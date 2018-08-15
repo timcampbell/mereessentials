@@ -1,8 +1,13 @@
 package com.sopa89.mereessentials.commands;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
 import com.sopa89.mereessentials.Main;
@@ -45,7 +50,13 @@ public class NickCommand implements CommandExecutor{
 				return false;
 			}
 			
-			target.setDisplayName(nick.substring(1, nick.length()-1));
+			nick = nick.substring(1, nick.length()-1);
+			
+			target.setDisplayName(nick);
+			target.setPlayerListName(nick);
+			
+			saveNick(target, nick);
+			
 			sender.sendMessage(Utils.chat(plugin.getConfig().getString("NickCommand.success") + target.getDisplayName()));
 			return true;
 		}
@@ -73,7 +84,13 @@ public class NickCommand implements CommandExecutor{
 						return false;
 					}
 					
-					target.setDisplayName(nick.substring(1, nick.length()-1));
+					nick = nick.substring(1, nick.length()-1);
+					
+					target.setDisplayName(nick);
+					target.setPlayerListName(nick);
+					
+					saveNick(target, nick);
+					
 					sender.sendMessage(Utils.chat(plugin.getConfig().getString("NickCommand.success") + target.getDisplayName()));
 					return true;
 				}
@@ -92,7 +109,13 @@ public class NickCommand implements CommandExecutor{
 					return false;
 				}
 				
-				p.setDisplayName(nick.substring(1, nick.length()-1));
+				nick = nick.substring(1, nick.length()-1);
+				
+				p.setDisplayName(nick);
+				p.setPlayerListName(nick);
+				
+				saveNick(p, nick);
+				
 				sender.sendMessage(Utils.chat(plugin.getConfig().getString("NickCommand.success") + p.getDisplayName()));
 				return true;
 			}
@@ -108,4 +131,17 @@ public class NickCommand implements CommandExecutor{
 		}
 	}
 
+	
+	private void saveNick(Player p, String nick)
+	{
+		File file = new File("plugins/MereEssentials/Players", p.getUniqueId() + ".yml");
+		
+		FileConfiguration config = YamlConfiguration.loadConfiguration(file);
+		
+		config.set("nick", nick);
+		
+		try {
+			config.save(file);
+		} catch (IOException e1) {}
+	}
 }
